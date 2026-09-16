@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0a0c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Story TV - Short Dramas & Originals</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-dark">
+
+  <!-- Desktop Presentation Frame Container -->
+  <div class="app-viewport-wrapper">
+
+    <!-- Top Demo Toolbar / Quick Jump (Can be minimized) -->
+    <header class="demo-toolbar" id="demo-toolbar">
+      <div class="demo-toolbar-left">
+        <span class="badge-demo">PROTOTYPE</span>
+        <span class="demo-title">Story TV</span>
+      </div>
+      <div class="demo-toolbar-center">
+        <select id="quick-step-selector" class="demo-select" aria-label="Jump to screen">
+          <option value="login">1. Login Sampler</option>
+          <option value="personalisation">2. Personalisation</option>
+          <option value="location">3. Location Permission</option>
+          <option value="reel-1">4. Video 1 (Reels)</option>
+          <option value="reel-2">5. Video 2 (Reels)</option>
+          <option value="reel-3">6. Video 3 (Reels)</option>
+          <option value="trial">7. Start Trial Screen (₹1)</option>
+          <option value="trial-success">8. Trial Success Screen</option>
+          <option value="settings-active">9. Settings (Active Plan)</option>
+          <option value="leave-step1">10. Leave Funnel: Step 1 (Features)</option>
+          <option value="retention-video-1">11. Video Interlude 1</option>
+          <option value="leave-step2">12. Leave Funnel: Step 2 (+1 Day Free)</option>
+          <option value="retention-video-2">13. Video Interlude 2</option>
+          <option value="leave-step3">14. Leave Funnel: Step 3 (Weekly ₹49)</option>
+          <option value="retention-video-3">15. Video Interlude 3</option>
+          <option value="leave-step4">16. Leave Funnel: Step 4 (Sachet ₹10)</option>
+          <option value="settings-cancelled">17. Settings (Autopay Cancelled)</option>
+        </select>
+      </div>
+      <div class="demo-toolbar-right">
+        <button id="toggle-device-frame" class="btn-tool" title="Toggle Phone Frame / Full Browser">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+          <span class="btn-text">Device Frame</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Mobile Device Wrapper -->
+    <main class="mobile-device-shell" id="mobile-device">
+      
+      <!-- Native Mobile Status Bar -->
+      <div class="mobile-status-bar">
+        <span class="status-time" id="status-clock">5:08</span>
+        <div class="status-notch">
+          <div class="camera-lens"></div>
+        </div>
+        <div class="status-icons">
+          <span class="icon-signal">
+            <svg width="14" height="12" viewBox="0 0 16 12" fill="currentColor"><rect x="1" y="8" width="2.5" height="4" rx="0.5"/><rect x="5" y="5" width="2.5" height="7" rx="0.5"/><rect x="9" y="2.5" width="2.5" height="9.5" rx="0.5"/><rect x="13" y="0" width="2.5" height="12" rx="0.5"/></svg>
+          </span>
+          <span class="icon-wifi">
+            <svg width="13" height="11" viewBox="0 0 16 12" fill="currentColor"><path d="M8 2.5C10.8 2.5 13.3 3.6 15.1 5.4L16 4.5C13.9 2.4 11.1 1 8 1C4.9 1 2.1 2.4 0 4.5L0.9 5.4C2.7 3.6 5.2 2.5 8 2.5ZM8 6C9.9 6 11.5 6.8 12.7 8L13.6 7.1C12.1 5.6 10.2 4.6 8 4.6C5.8 4.6 3.9 5.6 2.4 7.1L3.3 8C4.5 6.8 6.1 6 8 6ZM8 9.5C9 9.5 9.8 9.9 10.4 10.5L8 12.9L5.6 10.5C6.2 9.9 7 9.5 8 9.5Z"/></svg>
+          </span>
+          <span class="icon-battery">
+            <span class="battery-pct">74</span>
+            <svg width="20" height="10" viewBox="0 0 24 12" fill="currentColor"><rect x="1" y="1" width="19" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="3" y="3" width="12" height="6" rx="1.5"/><path d="M21.5 4C22.3 4 23 4.7 23 5.5V6.5C23 7.3 22.3 8 21.5 8V4Z"/></svg>
+          </span>
+        </div>
+      </div>
+
+      <!-- App Screen Containers -->
+      <div class="app-viewport" id="app-viewport">
+
+        <!-- ============================================== -->
+        <!-- SCREEN 1: LOGIN SAMPLER                        -->
+        <!-- ============================================== -->
+        <section class="screen screen-login active" id="screen-login">
+          <div class="login-bg-overlay">
+            <div class="ambient-glow glow-pink"></div>
+            <div class="ambient-glow glow-wine"></div>
+          </div>
+          <div class="login-content">
+            <div class="brand-hero">
+              <div class="brand-logo-badge">
+                <span class="logo-play-icon">▶</span>
+              </div>
+              <h1 class="brand-title">STORY<span class="brand-highlight">TV</span></h1>
+              <p class="brand-tagline">Binge India's Best Vertical Short Dramas</p>
+              <div class="brand-pill-tags">
+                <span>🔥 10,000+ Episodes</span>
+                <span>✨ ₹1 Trial</span>
+                <span>⚡ 1-Min Stories</span>
+              </div>
+            </div>
+
+            <div class="login-card-container">
+              <div class="login-pitch">
+                <h3>Welcome to Story TV</h3>
+                <p>Click below to jump into the personalized drama feed</p>
+              </div>
+
+              <!-- Quick Sampler CTA as requested: "just clicking login does the job" -->
+              <button class="btn-primary btn-cta btn-pulse" id="btn-login-quick">
+                <span>Explore Stories (Quick Login)</span>
+                <span class="btn-arrow">→</span>
+              </button>
+
+              <div class="login-divider">
+                <span>or demo sign in</span>
+              </div>
+
+              <div class="demo-phone-input-row">
+                <span class="phone-code">+91</span>
+                <input type="tel" class="phone-input" placeholder="Enter mobile number" value="98765 43210" readonly>
+              </div>
+
+              <button class="btn-secondary" id="btn-login-phone">
+                Login with OTP
+              </button>
+
+              <div class="login-footer-legal">
+                By continuing, you agree to Story TV's <a href="#">Terms</a> & <a href="#">Privacy Policy</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- SCREEN 2: INITIAL PERSONALISATION              -->
+        <!-- ============================================== -->
+        <section class="screen screen-personalisation" id="screen-personalisation">
+          <div class="screen-header">
+            <button class="btn-icon-back" id="back-from-personalisation" aria-label="Back">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <div class="step-indicator">Step 1 of 2</div>
+            <div class="header-spacer"></div>
+          </div>
+
+          <div class="screen-scrollable-content personalisation-body">
+            <div class="personalisation-heading">
+              <h2>Customize Your Feed</h2>
+              <p>Pick what you love for binge-worthy recommendations</p>
+            </div>
+
+            <!-- Gender -->
+            <div class="pref-group">
+              <label class="pref-label">Select Gender</label>
+              <div class="pref-options-chips" id="group-gender">
+                <button type="button" class="pref-chip active" data-value="Female">Female</button>
+                <button type="button" class="pref-chip" data-value="Male">Male</button>
+                <button type="button" class="pref-chip" data-value="Other">Other</button>
+              </div>
+            </div>
+
+            <!-- Age -->
+            <div class="pref-group">
+              <label class="pref-label">Age Group</label>
+              <div class="pref-options-chips" id="group-age">
+                <button type="button" class="pref-chip" data-value="18-24">18 - 24</button>
+                <button type="button" class="pref-chip active" data-value="25-34">25 - 34</button>
+                <button type="button" class="pref-chip" data-value="35-44">35 - 44</button>
+                <button type="button" class="pref-chip" data-value="45+">45+</button>
+              </div>
+            </div>
+
+            <!-- Language (4 exact options: Hindi, Telugu, Kannada, Tamil) -->
+            <div class="pref-group">
+              <label class="pref-label">Preferred Language <span class="badge-req">4 Options</span></label>
+              <div class="pref-grid-languages" id="group-language">
+                <button type="button" class="lang-card active" data-value="Hindi">
+                  <span class="lang-native">हिन्दी</span>
+                  <span class="lang-english">Hindi</span>
+                  <span class="lang-check">✓</span>
+                </button>
+                <button type="button" class="lang-card" data-value="Telugu">
+                  <span class="lang-native">తెలుగు</span>
+                  <span class="lang-english">Telugu</span>
+                  <span class="lang-check">✓</span>
+                </button>
+                <button type="button" class="lang-card" data-value="Kannada">
+                  <span class="lang-native">ಕನ್ನಡ</span>
+                  <span class="lang-english">Kannada</span>
+                  <span class="lang-check">✓</span>
+                </button>
+                <button type="button" class="lang-card" data-value="Tamil">
+                  <span class="lang-native">தமிழ்</span>
+                  <span class="lang-english">Tamil</span>
+                  <span class="lang-check">✓</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Genre (4 exact options: Comedy, Romance, Drama, Action) -->
+            <div class="pref-group">
+              <label class="pref-label">Favorite Genres <span class="badge-req">4 Options</span></label>
+              <div class="genre-grid" id="group-genre">
+                <button type="button" class="genre-card" data-value="Comedy">
+                  <span class="genre-emoji">😂</span>
+                  <span class="genre-name">Comedy</span>
+                  <span class="genre-sub">Laugh out loud</span>
+                </button>
+                <button type="button" class="genre-card active" data-value="Romance">
+                  <span class="genre-emoji">❤️</span>
+                  <span class="genre-name">Romance</span>
+                  <span class="genre-sub">Passion & love</span>
+                </button>
+                <button type="button" class="genre-card active" data-value="Drama">
+                  <span class="genre-emoji">🎭</span>
+                  <span class="genre-name">Drama</span>
+                  <span class="genre-sub">Twists & suspense</span>
+                </button>
+                <button type="button" class="genre-card" data-value="Action">
+                  <span class="genre-emoji">⚡</span>
+                  <span class="genre-name">Action</span>
+                  <span class="genre-sub">High adrenaline</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Sticky CTA -->
+          <div class="sticky-footer-bar">
+            <button class="btn-primary btn-cta" id="btn-personalisation-next">
+              <span>Next</span>
+              <span class="btn-arrow">→</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- SCREEN 3: LOCATION ACCESS PROMPT (MODAL)       -->
+        <!-- ============================================== -->
+        <div class="modal-backdrop" id="modal-location" role="dialog" aria-modal="true">
+          <div class="system-permission-card">
+            <div class="perm-icon-wrapper">
+              <div class="perm-pulse-ring"></div>
+              <div class="perm-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+            </div>
+            <h3 class="perm-title">Allow Location Access?</h3>
+            <p class="perm-desc">Story TV uses your approximate location to bring you top regional trending series, language dubbed dramas, and local creator premieres.</p>
+            <div class="perm-action-column">
+              <button class="btn-primary btn-perm" id="btn-location-allow">
+                <span>Allow While Using App</span>
+              </button>
+              <button class="btn-text-secondary btn-perm-deny" id="btn-location-deny">
+                Don't Allow
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- SCREEN 4: INSTAGRAM-STYLE SHORT VIDEO FEED     -->
+        <!-- ============================================== -->
+        <section class="screen screen-feed" id="screen-feed">
+          
+          <!-- Top Reel Header Overlay -->
+          <div class="reel-top-overlay">
+            <div class="reel-tabs">
+              <span class="tab-item">Following</span>
+              <span class="tab-item active">For You <span class="tab-dot"></span></span>
+              <span class="tab-item">Trending</span>
+            </div>
+            <div class="reel-top-actions">
+              <button class="btn-icon-pill" id="btn-sound-toggle" aria-label="Sound Toggle">
+                <span class="icon-sound-state" id="sound-icon">🔊</span>
+                <span class="sound-label" id="sound-label">Sound ON</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Vertical Reel Swipe Container -->
+          <div class="reels-deck" id="reels-deck">
+            
+            <!-- Video 1 -->
+            <div class="reel-slide active" data-index="1" id="reel-slide-1">
+              <div class="video-media-container">
+                <video class="bg-reel-video" id="video-elem-1" loop playsinline preload="auto" muted>
+                  <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+                </video>
+                <!-- Canvas Fallback / Ambient High Drama Animation -->
+                <canvas class="drama-canvas" id="canvas-reel-1"></canvas>
+                <div class="video-gradient-overlay"></div>
+              </div>
+
+              <!-- Reel Right Sidebar Buttons -->
+              <div class="reel-right-bar">
+                <div class="reel-action-item like-action" id="like-btn-1">
+                  <div class="action-circle">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                  </div>
+                  <span class="action-count">48.2K</span>
+                </div>
+                <div class="reel-action-item">
+                  <div class="action-circle">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M21.99 4c0-1.1-.89-2-1.99-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4-.01-18z"/></svg>
+                  </div>
+                  <span class="action-count">1.4K</span>
+                </div>
+                <div class="reel-action-item">
+                  <div class="action-circle">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"/></svg>
+                  </div>
+                  <span class="action-count">Share</span>
+                </div>
+                <div class="reel-action-item btn-next-reel-action" title="Next Video">
+                  <div class="action-circle" style="border-color: var(--primary-pink); color: var(--primary-pink);">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                  </div>
+                  <span class="action-count" style="color: var(--primary-pink);">Next ↓</span>
+                </div>
+              </div>
+
+              <!-- Reel Bottom Content Overlay -->
+              <div class="reel-bottom-info">
+                <div class="creator-tag-row">
+                  <div class="creator-avatar">🔥</div>
+                  <span class="creator-name">@storytv.originals</span>
+                  <span class="badge-vip">EXCLUSIVE</span>
+                </div>
+                <h3 class="reel-drama-title">The Billionaire's Hidden Heiress</h3>
+                <p class="reel-drama-desc">Episode 1 • "You took everything from my father. Now I'm taking your empire."</p>
+                <div class="reel-audio-ticker">
+                  <span>🎵 Original Sound - Story TV Drama Series #1 Trending</span>
+                </div>
+
+                <!-- Start Trial CTA on Video Reel -->
+                <div class="reel-cta-wrap">
+                  <button class="btn-trial-reel btn-pulse" data-action="go-trial">
+                    <span class="trial-btn-shine"></span>
+                    <span class="trial-btn-icon">⚡</span>
+                    <span class="trial-btn-text">Start Trial • ₹1 Only</span>
+                    <span class="trial-btn-arrow">→</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Video 2 -->
+            <div class="reel-slide" data-index="2" id="reel-slide-2">
+              <div class="video-media-container">
+                <video class="bg-reel-video" id="video-elem-2" loop playsinline preload="auto" muted>
+                  <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4">
+                </video>
+                <canvas class="drama-canvas" id="canvas-reel-2"></canvas>
+                <div class="video-gradient-overlay"></div>
+              </div>
+
+              <div class="reel-right-bar">
+                <div class="reel-action-item like-action" id="like-btn-2">
+                  <div class="action-circle">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                  </div>
+                  <span class="action-count">91.7K</span>
+                </div>
+                <div class="reel-action-item">
+                  <div class="action-circle">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M21.99 4c0-1.1-.89-2-1.99-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4-.01-18z"/></svg>
+                  </div>
+                  <span class="action-count">3.8K</span>
+                </div>
+                <div class="reel-action-item">
+                  <div class="action-circle">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"/></svg>
+                  </div>
+                  <span class="action-count">Share</span>
+                </div>
+                <div class="reel-action-item btn-next-reel-action" title="Next Video">
+                  <div class="action-circle" style="border-color: var(--primary-pink); color: var(--primary-pink);">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                  </div>
+                  <span class="action-count" style="color: var(--primary-pink);">Next ↓</span>
+                </div>
+              </div>
+
+              <div class="reel-bottom-info">
+                <div class="creator-tag-row">
+                  <div class="creator-avatar">👑</div>
+                  <span class="creator-name">@storytv.romance</span>
+                  <span class="badge-vip">TOP RATED</span>
+                </div>
+                <h3 class="reel-drama-title">Contract Marriage with the CEO</h3>
+                <p class="reel-drama-desc">Episode 3 • "Sign this agreement, and pretend to be my wife for 90 days."</p>
+                <div class="reel-audio-ticker">
+                  <span>🎵 Emotional Strings - Story TV Soundtrack</span>
+                </div>
+
+                <div class="reel-cta-wrap">
+                  <button class="btn-trial-reel btn-pulse" data-action="go-trial">
+                    <span class="trial-btn-shine"></span>
+                    <span class="trial-btn-icon">⚡</span>
+                    <span class="trial-btn-text">Start Trial • ₹1 Only</span>
+                    <span class="trial-btn-arrow">→</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Video 3 -->
+            <div class="reel-slide" data-index="3" id="reel-slide-3">
+              <div class="video-media-container">
+                <video class="bg-reel-video" id="video-elem-3" loop playsinline preload="auto" muted>
+                  <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4" type="video/mp4">
+                </video>
+                <canvas class="drama-canvas" id="canvas-reel-3"></canvas>
+                <div class="video-gradient-overlay"></div>
+              </div>
+
+              <div class="reel-right-bar">
+                <div class="reel-action-item like-action" id="like-btn-3">
+                  <div class="action-circle">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                  </div>
+                  <span class="action-count">120K</span>
+                </div>
+                <div class="reel-action-item">
+                  <div class="action-circle">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M21.99 4c0-1.1-.89-2-1.99-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4-.01-18z"/></svg>
+                  </div>
+                  <span class="action-count">6.2K</span>
+                </div>
+                <div class="reel-action-item">
+                  <div class="action-circle">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"/></svg>
+                  </div>
+                  <span class="action-count">Share</span>
+                </div>
+                <div class="reel-action-item btn-next-reel-action" title="Start Trial Screen">
+                  <div class="action-circle" style="border-color: var(--primary-pink); color: var(--primary-pink); background: rgba(255, 0, 122, 0.2);">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                  </div>
+                  <span class="action-count" style="color: var(--primary-pink);">Trial →</span>
+                </div>
+              </div>
+
+              <div class="reel-bottom-info">
+                <div class="creator-tag-row">
+                  <div class="creator-avatar">💥</div>
+                  <span class="creator-name">@storytv.thriller</span>
+                  <span class="badge-vip">CLIFFHANGER</span>
+                </div>
+                <h3 class="reel-drama-title">Revenge of the Disowned Son</h3>
+                <p class="reel-drama-desc">Episode 5 • "They laughed when I left. Today, I bought their company."</p>
+                <div class="reel-audio-ticker">
+                  <span>🎵 Dramatic Beat - Trending Climax Audio</span>
+                </div>
+
+                <div class="reel-cta-wrap">
+                  <button class="btn-trial-reel btn-pulse" data-action="go-trial">
+                    <span class="trial-btn-shine"></span>
+                    <span class="trial-btn-icon">⚡</span>
+                    <span class="trial-btn-text">Start Trial • ₹1 Only</span>
+                    <span class="trial-btn-arrow">→</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Reel Gestures Hint -->
+          <div class="gesture-hint-bar" id="gesture-hint">
+            <span class="gesture-arrow">↑</span>
+            <span>Swipe up for next • Swipe left/right for Trial</span>
+          </div>
+
+          <!-- Reel Progress Indicators -->
+          <div class="reel-progress-dots">
+            <span class="dot active" id="dot-1"></span>
+            <span class="dot" id="dot-2"></span>
+            <span class="dot" id="dot-3"></span>
+          </div>
+
+        </section>
+
+        <!-- ============================================== -->
+        <!-- SCREEN 5: START TRIAL SCREEN (SCREENSHOT 1)    -->
+        <!-- ============================================== -->
+        <section class="screen screen-trial" id="screen-trial">
+          
+          <!-- Header: Back Arrow & FAQs -->
+          <div class="trial-top-nav">
+            <button class="btn-trial-back" id="btn-back-to-feed" aria-label="Back">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button class="btn-trial-faqs" id="btn-trial-faqs">FAQs</button>
+          </div>
+
+          <div class="trial-scrollable-body">
+            
+            <!-- Hero Heading: Start Trial for ₹99 strikethrough & ₹1 -->
+            <div class="trial-hero-heading">
+              <div class="strikethrough-banner">
+                <span class="strikethrough-text">Start Trial for ₹99</span>
+                <span class="strike-line"></span>
+              </div>
+              <div class="giant-currency-price">₹1</div>
+              <p class="trial-social-proof">
+                5 Crore+ people bought the trial offer till now!
+              </p>
+            </div>
+
+            <!-- Video Preview Card with Girl / Drama preview -->
+            <div class="trial-media-card">
+              <div class="media-card-inner">
+                <!-- Video / Image Preview -->
+                <canvas class="card-video-canvas" id="canvas-card-preview"></canvas>
+                <div class="card-speaker-icon" id="btn-card-sound">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+                </div>
+                <!-- Badge on card -->
+                <div class="card-start-trial-badge">
+                  <div class="badge-title">START TRIAL</div>
+                  <div class="badge-amount">₹ 1</div>
+                </div>
+              </div>
+              <div class="card-caption">Cancel the plan anytime</div>
+            </div>
+
+            <!-- Step Timeline List -->
+            <div class="trial-timeline-list">
+              
+              <!-- Step 1: Start your Trial Plan -->
+              <div class="timeline-row">
+                <div class="timeline-icon-col">
+                  <div class="timeline-circle">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                  </div>
+                  <div class="timeline-connector"></div>
+                </div>
+                <div class="timeline-content-col">
+                  <h4 class="timeline-title">Start your Trial Plan</h4>
+                  <p class="timeline-sub">Pay ₹1 and unlock all dramas</p>
+                </div>
+              </div>
+
+              <!-- Step 2: Watch new dramas for 1 days -->
+              <div class="timeline-row">
+                <div class="timeline-icon-col">
+                  <div class="timeline-circle">
+                    <!-- NEW / Star Badge Icon -->
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  </div>
+                  <div class="timeline-connector"></div>
+                </div>
+                <div class="timeline-content-col">
+                  <h4 class="timeline-title">Watch new dramas for 1 days</h4>
+                  <p class="timeline-sub">Romance, revenge and much more</p>
+                </div>
+              </div>
+
+              <!-- Step 3: Notified before autopay -->
+              <div class="timeline-row">
+                <div class="timeline-icon-col">
+                  <div class="timeline-circle">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect><line x1="7" y1="2" x2="7" y2="22"></line><line x1="17" y1="2" x2="17" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line><line x1="2" y1="7" x2="7" y2="7"></line><line x1="2" y1="17" x2="7" y2="17"></line><line x1="17" y1="17" x2="22" y2="17"></line><line x1="17" y1="7" x2="22" y2="7"></line></svg>
+                  </div>
+                </div>
+                <div class="timeline-content-col">
+                  <h4 class="timeline-title">Notified before autopay</h4>
+                  <p class="timeline-sub">Pay ₹699/3 months after 1 days</p>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- GPay Payment Method Row -->
+            <div class="gpay-select-bar">
+              <div class="gpay-left">
+                <div class="gpay-logo-badge">
+                  <!-- Crisp SVG Google Pay Icon -->
+                  <svg width="36" height="22" viewBox="0 0 54 34" fill="none">
+                    <rect width="54" height="34" rx="6" fill="#ffffff"/>
+                    <path d="M18.8 17.1c0-.4 0-.8-.1-1.2h-7.6v2.4h4.3c-.2 1-.7 1.8-1.5 2.4v2h2.5c1.4-1.3 2.4-3.3 2.4-5.6z" fill="#4285F4"/>
+                    <path d="M11.1 24.8c2.1 0 3.8-.7 5.1-1.9l-2.5-2c-.7.5-1.6.8-2.6.8-2 0-3.7-1.3-4.3-3.2H4.2v2c1.3 2.6 4.1 4.3 6.9 4.3z" fill="#34A853"/>
+                    <path d="M6.8 18.5c-.2-.5-.3-1.1-.3-1.7s.1-1.2.3-1.7v-2H4.2C3.7 14.3 3.4 15.6 3.4 17s.3 2.7.8 3.9l2.6-2.4z" fill="#FBBC05"/>
+                    <path d="M11.1 11.5c1.1 0 2.2.4 3 1.1l2.2-2.2C14.9 9.1 13.1 8.5 11.1 8.5c-2.8 0-5.6 1.7-6.9 4.3l2.6 2c.6-1.9 2.3-3.3 4.3-3.3z" fill="#EA4335"/>
+                    <text x="23" y="21.5" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="13" fill="#3c4043">Pay</text>
+                  </svg>
+                </div>
+                <span class="gpay-name">GPay</span>
+              </div>
+              <button class="btn-change-pay">Change &gt;</button>
+            </div>
+
+          </div>
+
+          <!-- Bottom Sticky Start Trial CTA Button -->
+          <div class="trial-bottom-sticky">
+            <button class="btn-start-trial-magenta" id="btn-submit-trial">
+              <span>Start Trial</span>
+              <span class="btn-arrow">→</span>
+            </button>
+          </div>
+
+        </section>
+
+        <!-- ============================================== -->
+        <!-- SCREEN 6: TRIAL SUCCESSFUL SCREEN              -->
+        <!-- ============================================== -->
+        <section class="screen screen-trial-success" id="screen-trial-success">
+          <div class="success-card">
+            <div class="success-icon-wrap">
+              <div class="success-sparkles"></div>
+              <div class="success-check-circle">✓</div>
+            </div>
+            <h2 class="success-title">Trial Activated!</h2>
+            <p class="success-amount">₹1.00 Paid via GPay</p>
+            <div class="success-meta-box">
+              <div class="meta-row">
+                <span>Access Status</span>
+                <span class="text-green">Active (All Dramas Unlocked)</span>
+              </div>
+              <div class="meta-row">
+                <span>Autopay Scheduled</span>
+                <span>18th Sep, 2026 (₹699/3 months)</span>
+              </div>
+              <div class="meta-row">
+                <span>Cancellation</span>
+                <span>Free anytime with 1-click</span>
+              </div>
+            </div>
+            <p class="success-prompt-note">Taking you to Subscription Settings...</p>
+            <button class="btn-primary btn-cta" id="btn-go-to-settings">
+              <span>View Subscription Settings</span>
+              <span class="btn-arrow">→</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- SCREEN 7: SUBSCRIPTION SETTINGS (SCREENSHOT 2) -->
+        <!-- ============================================== -->
+        <section class="screen screen-settings" id="screen-settings">
+          
+          <!-- Header -->
+          <div class="settings-nav-header">
+            <button class="btn-settings-back" id="btn-settings-back" aria-label="Back">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <h2 class="settings-title">Subscription settings</h2>
+            <div class="header-spacer"></div>
+          </div>
+
+          <div class="settings-scroll-content">
+
+            <!-- Demonstration Prompt Banner (to guide testing) -->
+            <div class="demo-guide-banner" id="demo-guide-banner">
+              <span class="guide-icon">💡</span>
+              <div class="guide-text">
+                <strong>Prototype Demo:</strong> Tap <em>"Cancel Plan"</em> below to test the 4-step Leave Trial retention journey!
+              </div>
+            </div>
+            
+            <!-- Premium Plan Card -->
+            <div class="premium-plan-card" id="premium-plan-card">
+              <div class="plan-card-top-row">
+                <span class="plan-name">Premium Plan</span>
+                <span class="plan-status-badge status-active" id="plan-status-text">Active Trial</span>
+              </div>
+
+              <div class="plan-expiry-row">
+                <span class="expiry-label" id="expiry-label-text">Next autopay date:</span>
+                <span class="expiry-date" id="expiry-date-value">18th Sep, 2026</span>
+              </div>
+
+              <!-- Renew Button (Shown only when plan is cancelled, matching Screenshot 2) -->
+              <div class="renew-button-wrap" id="renew-button-wrap" style="display: none;">
+                <button class="btn-renew-magenta" id="btn-renew-plan">
+                  <span>Renew Now</span>
+                  <span class="btn-arrow">→</span>
+                </button>
+              </div>
+
+              <!-- Premium Benefits Divider -->
+              <div class="benefits-divider">
+                <span class="divider-line"></span>
+                <span class="divider-text">Premium Benefits</span>
+                <span class="divider-line"></span>
+              </div>
+
+              <!-- 4 Benefits Icons -->
+              <div class="benefits-grid">
+                
+                <!-- Unlimited Access -->
+                <div class="benefit-item">
+                  <div class="benefit-icon-box">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect><line x1="7" y1="2" x2="7" y2="22"></line><line x1="17" y1="2" x2="17" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line><polygon points="10 8 16 12 10 16 10 8" fill="currentColor"></polygon></svg>
+                  </div>
+                  <span class="benefit-label">Unlimited Access</span>
+                </div>
+
+                <!-- Ads Free -->
+                <div class="benefit-item">
+                  <div class="benefit-icon-box">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line><text x="8" y="15" font-size="8" font-weight="bold" fill="currentColor">AD</text></svg>
+                  </div>
+                  <span class="benefit-label">Ads Free</span>
+                </div>
+
+                <!-- HD Quality -->
+                <div class="benefit-item">
+                  <div class="benefit-icon-box">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="3"></rect><text x="6" y="15" font-size="9" font-weight="900" fill="currentColor">HD</text></svg>
+                  </div>
+                  <span class="benefit-label">HD Quality</span>
+                </div>
+
+                <!-- Multiple Logins -->
+                <div class="benefit-item">
+                  <div class="benefit-icon-box">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                  </div>
+                  <span class="benefit-label">Multiple Logins</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- Help and Support -->
+            <div class="settings-section">
+              <h3 class="section-heading">Help and Support</h3>
+              <div class="settings-menu-group">
+                <button class="settings-menu-item" id="btn-contact-us">
+                  <div class="menu-item-left">
+                    <span class="menu-icon">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    </span>
+                    <span class="menu-label">Contact us</span>
+                  </div>
+                  <span class="menu-chevron">&gt;</span>
+                </button>
+
+                <!-- Cancel Plan Row (Prompted to click as requested) -->
+                <button class="settings-menu-item menu-cancel" id="btn-trigger-cancel-flow">
+                  <div class="menu-item-left">
+                    <span class="menu-icon icon-cancel-circle">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                    </span>
+                    <span class="menu-label" id="cancel-menu-label">Cancel Plan</span>
+                  </div>
+                  <span class="menu-chevron">&gt;</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- FAQs Section -->
+            <div class="settings-section faqs-section">
+              <h3 class="section-heading">FAQs</h3>
+              <div class="accordion-list">
+                
+                <details class="faq-item">
+                  <summary class="faq-summary">
+                    <span>Q1. What are the benefits of Story TV Premium?</span>
+                    <span class="faq-arrow">∨</span>
+                  </summary>
+                  <div class="faq-answer">
+                    Story TV Premium unlocks 10,000+ vertical drama episodes, ad-free continuous streaming, ultra-HD video quality, and access on multiple mobile & tablet devices simultaneously.
+                  </div>
+                </details>
+
+                <details class="faq-item">
+                  <summary class="faq-summary">
+                    <span>Q2. What is included in the Premium Plan?</span>
+                    <span class="faq-arrow">∨</span>
+                  </summary>
+                  <div class="faq-answer">
+                    Full catalog access to exclusive originals, daily new episode releases, regional language dubs (Hindi, Telugu, Kannada, Tamil), and offline download support.
+                  </div>
+                </details>
+
+                <details class="faq-item">
+                  <summary class="faq-summary">
+                    <span>Q3. How can I get the money back if I don't like Story TV Premium?</span>
+                    <span class="faq-arrow">∨</span>
+                  </summary>
+                  <div class="faq-answer">
+                    You can cancel your trial anytime within the 1-day period and you will not be charged the recurring autopay. For billing queries, contact support 24/7.
+                  </div>
+                </details>
+
+                <details class="faq-item">
+                  <summary class="faq-summary">
+                    <span>Q4. How can I cancel my plan for future billing?</span>
+                    <span class="faq-arrow">∨</span>
+                  </summary>
+                  <div class="faq-answer">
+                    Simply tap "Cancel Plan" under Help and Support above. Your cancellation takes effect immediately and autopay is revoked.
+                  </div>
+                </details>
+
+                <details class="faq-item">
+                  <summary class="faq-summary">
+                    <span>Q5. Will the content that is currently available be removed?</span>
+                    <span class="faq-arrow">∨</span>
+                  </summary>
+                  <div class="faq-answer">
+                    No, our core catalog remains available, and fresh exclusive short drama episodes are added every single week.
+                  </div>
+                </details>
+
+              </div>
+            </div>
+
+          </div>
+
+        </section>
+
+        <!-- ============================================== -->
+        <!-- LEAVE TRIAL JOURNEY: STEP 1 (MISSED FEATURES)  -->
+        <!-- ============================================== -->
+        <section class="screen screen-leave-step" id="screen-leave-step1">
+          <div class="leave-top-nav">
+            <button class="btn-icon-back" id="back-leave-step1" aria-label="Back">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <span class="retention-step-pill">Cancellation Step 1 of 4</span>
+            <div class="header-spacer"></div>
+          </div>
+
+          <div class="leave-content-body">
+            <div class="leave-hero-box">
+              <div class="leave-alert-icon">⚠️</div>
+              <h2 class="leave-title">Features you're going to miss out on</h2>
+              <p class="leave-subtitle">Cancelling your trial revokes your VIP privileges immediately</p>
+            </div>
+
+            <div class="missed-features-list">
+              <div class="missed-feature-card">
+                <div class="missed-icon">🎬</div>
+                <div class="missed-info">
+                  <h4>HD Quality Videos</h4>
+                  <p>Crisp 1080p vertical streaming with cinematic Dolby audio</p>
+                </div>
+              </div>
+
+              <div class="missed-feature-card">
+                <div class="missed-icon">📱</div>
+                <div class="missed-info">
+                  <h4>Device Sharing</h4>
+                  <p>Stream simultaneously on mobile, tablet & smart displays</p>
+                </div>
+              </div>
+
+              <div class="missed-feature-card">
+                <div class="missed-icon">♾️</div>
+                <div class="missed-info">
+                  <h4>Unlimited Access</h4>
+                  <p>10,000+ cliffhanger episodes & daily original releases</p>
+                </div>
+              </div>
+
+              <div class="missed-feature-card">
+                <div class="missed-icon">🚫</div>
+                <div class="missed-info">
+                  <h4>Ads Free Bingeing</h4>
+                  <p>Zero commercial breaks, binge full seasons non-stop</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Retention CTAs -->
+          <div class="leave-footer-actions">
+            <button class="btn-primary btn-cta" id="btn-step1-keep">
+              Keep Plan
+            </button>
+            <button class="btn-link-unhighlighted" id="btn-step1-proceed">
+              Proceed to cancel
+            </button>
+          </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- REUSABLE RETENTION VIDEO INTERLUDE SCREEN      -->
+        <!-- Plays short video clip between steps           -->
+        <!-- ============================================== -->
+        <section class="screen screen-retention-video" id="screen-retention-video">
+          <div class="video-media-container">
+            <video class="bg-reel-video" id="video-retention" loop playsinline preload="auto" muted>
+              <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+            </video>
+            <canvas class="drama-canvas" id="canvas-retention"></canvas>
+            <div class="video-gradient-overlay"></div>
+          </div>
+
+          <!-- Interlude Top Bar -->
+          <div class="interlude-top-bar">
+            <span class="interlude-badge" id="interlude-badge-text">Story TV Teaser Clip</span>
+            <button class="btn-sound-pill-mini" id="btn-retention-sound">🔊 Sound ON</button>
+          </div>
+
+          <!-- Interlude Bottom Info & CTAs -->
+          <div class="interlude-bottom-wrap">
+            <div class="interlude-drama-info">
+              <span class="interlude-tag">🔥 Trending Cliffhanger</span>
+              <h3 class="interlude-title" id="interlude-title">Next episode is unlocked on your trial!</h3>
+              <p class="interlude-desc">Binge the thrilling revelation right now.</p>
+            </div>
+
+            <div class="interlude-actions">
+              <!-- Primary CTA: Continue Trial -->
+              <button class="btn-primary btn-cta btn-pulse" id="btn-interlude-continue">
+                Continue Trial
+              </button>
+              <!-- Secondary unhighlighted CTA -->
+              <button class="btn-link-unhighlighted" id="btn-interlude-proceed">
+                Proceed to cancel
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- LEAVE TRIAL JOURNEY: STEP 2 (1-DAY EXTENSION)  -->
+        <!-- ============================================== -->
+        <section class="screen screen-leave-step" id="screen-leave-step2">
+          <div class="leave-top-nav">
+            <button class="btn-icon-back" id="back-leave-step2" aria-label="Back">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <span class="retention-step-pill">Cancellation Step 2 of 4</span>
+            <div class="header-spacer"></div>
+          </div>
+
+          <div class="leave-content-body">
+            <div class="leave-hero-box">
+              <div class="leave-gift-icon">🎁</div>
+              <h2 class="leave-title">Need 1 more day of Trial Extension?</h2>
+              <p class="leave-subtitle">We've added an extra 24 hours of free VIP access. Your autopay is pushed back automatically.</p>
+            </div>
+
+            <div class="extension-offer-card">
+              <div class="offer-pill-badge">FREE SPECIAL OFFER</div>
+              <div class="extension-highlight">
+                <span class="ext-days">+1 Day</span>
+                <span class="ext-label">Free VIP Access</span>
+              </div>
+              <div class="extension-details">
+                <div class="ext-row">
+                  <span>Updated Autopay Date:</span>
+                  <strong class="text-pink" id="ext-new-date">19th Sep, 2026</strong>
+                </div>
+                <div class="ext-row">
+                  <span>Charged Today:</span>
+                  <strong class="text-green">₹0 (Completely Free)</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="leave-footer-actions">
+            <button class="btn-primary btn-cta" id="btn-step2-claim">
+              Keep Plan & Claim +1 Day
+            </button>
+            <button class="btn-link-unhighlighted" id="btn-step2-proceed">
+              Proceed to cancel
+            </button>
+          </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- LEAVE TRIAL JOURNEY: STEP 3 (WEEKLY AUTOPAY)   -->
+        <!-- ============================================== -->
+        <section class="screen screen-leave-step" id="screen-leave-step3">
+          <div class="leave-top-nav">
+            <button class="btn-icon-back" id="back-leave-step3" aria-label="Back">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <span class="retention-step-pill">Cancellation Step 3 of 4</span>
+            <div class="header-spacer"></div>
+          </div>
+
+          <div class="leave-content-body">
+            <div class="leave-hero-box">
+              <div class="leave-alert-icon">🔄</div>
+              <h2 class="leave-title">Update Autopay (weekly)</h2>
+              <p class="leave-subtitle">If undecided on 3 months commitment - try shorter period with no long lock-in!</p>
+            </div>
+
+            <div class="plan-comparison-box">
+              
+              <!-- Shorter Weekly Option -->
+              <div class="plan-compare-card selected-weekly">
+                <div class="compare-header">
+                  <span class="badge-recommended">NEW FLEXIBLE OPTION</span>
+                  <span class="radio-indicator checked">●</span>
+                </div>
+                <div class="compare-title">Weekly Pass</div>
+                <div class="compare-price">₹49 <span class="compare-period">/ week</span></div>
+                <p class="compare-sub">Pay week by week. Cancel anytime with zero commitment.</p>
+              </div>
+
+              <!-- Old Quarterly Option -->
+              <div class="plan-compare-card standard-quarterly">
+                <div class="compare-header">
+                  <span class="badge-standard">CURRENT SELECTION</span>
+                  <span class="radio-indicator">○</span>
+                </div>
+                <div class="compare-title">Quarterly Plan</div>
+                <div class="compare-price">₹699 <span class="compare-period">/ 3 months</span></div>
+                <p class="compare-sub">Autopay scheduled after trial period ends.</p>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="leave-footer-actions">
+            <button class="btn-primary btn-cta" id="btn-step3-keep">
+              Switch to Weekly & Keep Plan
+            </button>
+            <button class="btn-link-unhighlighted" id="btn-step3-proceed">
+              Proceed to cancel
+            </button>
+          </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- LEAVE TRIAL JOURNEY: STEP 4 (SACHET BUY)       -->
+        <!-- ============================================== -->
+        <section class="screen screen-leave-step" id="screen-leave-step4">
+          <div class="leave-top-nav">
+            <button class="btn-icon-back" id="back-leave-step4" aria-label="Back">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <span class="retention-step-pill">Final Step 4 of 4</span>
+            <div class="header-spacer"></div>
+          </div>
+
+          <div class="leave-content-body">
+            <div class="leave-hero-box">
+              <div class="leave-alert-icon">🎯</div>
+              <h2 class="leave-title">Sachet one-time buy</h2>
+              <p class="leave-subtitle">Buy just the show you started watching for 10 rupees — one time payment, cancels autopay completely!</p>
+            </div>
+
+            <div class="sachet-product-card">
+              <div class="sachet-thumbnail-preview">
+                <div class="sachet-badge-exclusive">LIFETIME SHOW ACCESS</div>
+                <div class="sachet-title" id="sachet-show-title">The Billionaire's Hidden Heiress</div>
+                <div class="sachet-episodes">All 65 Episodes • Ad-free forever</div>
+              </div>
+
+              <div class="sachet-pricing-row">
+                <div class="sachet-price-left">
+                  <span class="sachet-strike">₹199</span>
+                  <span class="sachet-current">₹10</span>
+                  <span class="sachet-tag">One-time payment</span>
+                </div>
+                <div class="sachet-autopay-pill">
+                  ✓ Cancels Autopay
+                </div>
+              </div>
+            </div>
+
+            <div class="sachet-benefits-note">
+              <p>✓ No recurring charges • ✓ Keep full show in your library forever • ✓ Immediate autopay cancellation</p>
+            </div>
+          </div>
+
+          <div class="leave-footer-actions">
+            <button class="btn-primary btn-cta" id="btn-step4-buy">
+              Buy Show for ₹10 & Cancel Autopay
+            </button>
+            <button class="btn-link-unhighlighted" id="btn-step4-proceed">
+              Proceed to cancel without buying
+            </button>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Native Bottom Home Bar -->
+      <div class="mobile-home-indicator"></div>
+
+      <!-- Toast Notification Bubble -->
+      <div class="toast-notification" id="toast-notification"></div>
+
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
