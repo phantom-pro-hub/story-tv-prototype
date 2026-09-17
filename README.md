@@ -27,7 +27,7 @@ Because this repository uses pure standard HTML5, CSS3, and modern ES6 JavaScrip
 2. Go to **Settings** > **Pages** in your GitHub repository.
 3. Under **Branch**, select `main` (or `master`) and folder `/ (root)`.
 4. Click **Save**.
-5. Your prototype will be live globally at `https://<your-username>.github.io/<repo-name>/`!
+5. Your prototype will be live globally at `https://phantom-pro-hub.github.io/story-tv-prototype/`!
 
 ---
 
